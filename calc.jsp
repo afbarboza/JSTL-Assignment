@@ -8,8 +8,24 @@
 
 		<c:set var="val1" value="${param.op1}" />
 		<c:set var="val2" value="${param.op2}" />
+		<c:set var="opr"  value="${param.cmd}" />
+		<c:set var="res"  scope="session" value="${0}" />
 
-		<!-- Adding two values. A simple example -->
-		<p><c:out value="${val1 + val2}" /></p>
+		<c:if test="${opr == '+'}">
+			<c:set var="res" value="${val1+val2}" />
+		</c:if>
+
+		<c:if test="${opr == '-'}">
+			<c:set var="res" value="${val1-val2}" />
+		</c:if>
+
+		<c:if test="${opr == '*'}">
+			<c:set var="res" value="${val1*val2}" />
+		</c:if>
+
+		<c:if test="${opr == '/'}">
+			<c:set var="res" value="${val1/val2}" />		
+		</c:if>
+
 	</body>
 </html>
