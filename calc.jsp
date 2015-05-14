@@ -12,20 +12,21 @@
 		<c:set var="res"  scope="session" value="${0}" />
 
 		<c:if test="${opr == '+'}">
-			<c:set var="res" value="${val1+val2}" />
+			<c:set var="res" scope="session" value="${val1+val2}" />
 		</c:if>
 
 		<c:if test="${opr == '-'}">
-			<c:set var="res" value="${val1-val2}" />
+			<c:set var="res" scope="session"  value="${val1-val2}" />
 		</c:if>
 
 		<c:if test="${opr == '*'}">
-			<c:set var="res" value="${val1*val2}" />
+			<c:set var="res" scope="session" value="${val1*val2}" />
 		</c:if>
 
 		<c:if test="${opr == '/'}">
-			<c:set var="res" value="${val1/val2}" />		
+			<c:set var="res" scope="session" value="${val1/val2}" />		
 		</c:if>
 
+		<c:redirect url="./result.jsp" />
 	</body>
 </html>
