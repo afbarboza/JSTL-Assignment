@@ -5,11 +5,11 @@
 	</head>
 	
 	<body>
-		<!-- UNTIL HERE, IT WORKS FINE -->
-		<p><c:out value="${param.op1}" /></p>
-		<p><c:out value="${param.cmd}" /><p>
-		<p><c:out value="${param.op2}" /></p>
 
-		
+		<c:set var="val1" value="${param.op1}" />
+		<c:set var="val2" value="${param.op2}" />
+
+		<!-- Adding two values. A simple example -->
+		<p><c:out value="${val1 + val2}" /></p>
 	</body>
 </html>
